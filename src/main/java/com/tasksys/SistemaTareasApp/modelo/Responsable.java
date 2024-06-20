@@ -1,9 +1,6 @@
 package com.tasksys.SistemaTareasApp.modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +17,7 @@ public class Responsable {
     private int id_responsable;
     private String nombre_responsable;
     private String apellido_responsable;
-    private String nombreCompleto_responsable = nombre_responsable + " " + apellido_responsable;
+    @Column(name = "nombre_completo_responsable", insertable = false, updatable = false)
+    private String nombreCompleto_responsable;
     private String rol_responsable;
 }
